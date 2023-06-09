@@ -58,7 +58,22 @@ def two_dimensional_sweep(
     start_time = time.time()
 
     # setup logging parameters
-    vfast_list = np.linspace(config['fast_vstart'], config['fast_vend'], config['fast_steps'])
+
+    bins = config['fast_steps']
+    bin_size = int(num_samples_raw / bins)
+
+    Vx_list = np.linspace(config['fast_vstart'], config['fast_vend'], config['fast_steps'])
+    vfast_list = np.array([])
+
+    i = 0
+    while i < bins:
+        bin_volts = Vx_list[i]
+        j = 0
+        while j < bin_size:
+            j += 1
+            vfast_list = np.append(vfast_list, bin_volts)
+        i += 1
+
     Vx = dict(name=config['fast_ch_name'], unit='V', values=vfast_list)
 
     vslow_list = np.linspace(config['slow_vstart'], config['slow_vend'], config['slow_steps'])
@@ -87,8 +102,6 @@ def two_dimensional_sweep(
     fast_qdac = QDAC(client, fast_ramp_mapping)
 
     for i, vslow in enumerate(vslow_list):
-        results = np.array([])
-        
         slow_qdac.ramp_voltages_software(
             v_startlist=[],
             v_endlist=[vslow for _ in range(len(config['slow_ch']))],
@@ -116,21 +129,8 @@ def two_dimensional_sweep(
             sample_rate=sample_rate_per_channel
         )
 
-        bins = config['fast_steps']
-        bin_size = int(num_samples_raw / bins)
-
-        i = 0
-        while i < bins:
-            bin = np.array([])
-            j = 0
-            while j < bin_size:
-                bin = np.append(bin, result[j])
-                j += 1
-            results = np.append(results, np.average(bin))
-            i += 1
-
         data = {
-            'I': results,
+            'I': result,
             'Vx': vfast_list,
             'Vy': vslow
         }
