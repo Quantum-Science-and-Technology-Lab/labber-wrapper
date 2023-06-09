@@ -120,6 +120,8 @@ def two_dimensional_sweep(
             repetitions=1
         )
 
+        time.sleep(0.015)  # it usually takes about 2 ms for setting up the NIDAQ tasks
+
         result = nidaq.read(  # this read is not precise - it will just take num_samples_raw samples over the ramp time
             ch_id=single_e_transistor.ai_ch_num,
             v_min=v_min,
