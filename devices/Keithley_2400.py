@@ -23,6 +23,7 @@ class Keithley2400(BaseDevice):
         super().__init__('Keithley 2400 SourceMeter', dict(interface='GPIB', address='2'), client, schema)
 
     def set_voltage(self, voltage):
+        # TODO: use custom driver
         self.instr.startInstrument()
         self.set_value(self._keithley_src_status_key(), True)
         self.set_value(self._keithley_src_func_key(), 'Voltage')
