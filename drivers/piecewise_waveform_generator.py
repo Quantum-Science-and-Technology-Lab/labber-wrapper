@@ -3,6 +3,9 @@ from dataclasses import dataclass
 from typing import Optional
 import VISA_Driver from VISA_Driver
 
+# Move this file to:
+# Program Files/Keysight/Labber/Instrument Drivers/piecewise_waveform_generator/piecewise_waveform_generator.py
+
 
 @dataclass
 class Piece(object):
