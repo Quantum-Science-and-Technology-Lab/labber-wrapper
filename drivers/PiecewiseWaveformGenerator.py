@@ -1,10 +1,12 @@
+#!/usr/bin/env python
+
 from math import floor
 from dataclasses import dataclass
 from typing import Optional
-import VISA_Driver from VISA_Driver
+import InstrumentDriver
 
 # Move this file to:
-# Program Files/Keysight/Labber/Instrument Drivers/piecewise_waveform_generator/piecewise_waveform_generator.py
+# Program Files/Keysight/Labber/Drivers/piecewise_waveform_generator/PiecewiseWaveformGenerator.py
 
 
 @dataclass
@@ -126,12 +128,11 @@ class Piecewise(object):
             return piece.volts
 
 
-class AWGPiecewiseWaveformDriver(VISA_Driver):
+class Driver(InstrumentDriver.InstrumentWorker):
 
     def performOpen(self, options={}):
         """Perform the open instrument connection operation"""
-        self.dMeasParam = {}
-        VISA_Driver.performOpen(self, options=options)
+        pass
 
     def performClose(self, bError=False, options={}):
         """Perform the close instrument connection operation"""
@@ -156,7 +157,10 @@ class AWGPiecewiseWaveformDriver(VISA_Driver):
                 ramp_time_ns=3,
                 resolution_ns=1
             )
-            trace = quant.getTraceDict(signal, t0=0.0, dt=1)  # return the trace object
+            volts = []
+            for volt in signal:
+                volts.append(volt)
+            trace = quant.getTraceDict(volts, t0=0.0, dt=1)  # return the trace object
             return trace
         else:
             # for other quantities, just return current value of control
