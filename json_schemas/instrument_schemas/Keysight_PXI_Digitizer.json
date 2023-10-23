@@ -1,5 +1,5 @@
 {
-    "$id": "json_schemas/Keysight_PXI_Digitizer.json",
+    "$id": "json_schemas/instrument_schemas/Keysight_PXI_Digitizer.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title" : "digitizer values validation",
     "type": "object",
@@ -125,7 +125,7 @@
             "type": "number" 
         },
         "Ch1 - Signal": {
-            "type": "arrray"
+            "type": "array"
         },
         "Ch1 - Signal - Sweep Rate": {
             "type": "number"

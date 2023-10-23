@@ -1,5 +1,5 @@
 {
-    "$id": "json_schemas/SET.json",
+    "$id": "json_schemas/device_schemas/SET.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title" : "SET values",
     "required" : ["bias_ch_num", "plunger_ch_num", "acc_ch_num", "vb1_ch_num", "vb2_ch_num", "ai_ch_num"],
@@ -31,7 +31,9 @@
             "maximum": 24
         },
         "ai_ch_num": {
-            "type": "string"    
+            "type": "number",
+            "minimum": 1,
+            "maximum": 8
         }
     }
-} 
+}

@@ -1,6 +1,6 @@
 {
-    "bias_ch_num": 9,
-    "plunger_ch_num": 10,
+    "bias_ch_num": 7,
+    "plunger_ch_num": 8,
     "acc_ch_num": 1,
     "vb1_ch_num": 2,
     "vb2_ch_num": 3,

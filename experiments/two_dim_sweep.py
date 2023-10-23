@@ -11,7 +11,7 @@ from labberwrapper.devices.SET import SET
 from labberwrapper.logging.log import Log
 from jsonschema import validate
 
-# TODO: debug on lab computer
+
 def two_dimensional_sweep(
         single_e_transistor,
         slow_ch,
@@ -105,8 +105,8 @@ def two_dimensional_sweep(
         )
 
         fast_qdac.ramp_voltages(
-            v_startlist= fast_vstart for _ in range(len(fast_ch)),
-            v_endlist=fast_vend for _ in range(len(fast_ch)),
+            v_startlist=[fast_vstart for _ in range(len(fast_ch))],
+            v_endlist=[fast_vend for _ in range(len(fast_ch))],
             ramp_time=fast_step_size * fast_steps,
             step_length=fast_step_size,
             repetitions=1
@@ -146,17 +146,19 @@ if __name__ == '__main__':
 
     # define the SET to be measured
     dev_config = json.load(open('../device_configs/SET.json', 'r'))
-    SET1 = SET(dev_config["bias_ch_num"],
-               dev_config["plunger_ch_num"],
-               dev_config["acc_ch_num"],
-               dev_config["vb1_ch_num"],
-               dev_config["vb2_ch_num"],
-               dev_config["ai_ch_num"])
+    SET1 = SET(
+        dev_config["bias_ch_num"],
+        dev_config["plunger_ch_num"],
+        dev_config["acc_ch_num"],
+        dev_config["vb1_ch_num"],
+        dev_config["vb2_ch_num"],
+        dev_config["ai_ch_num"]
+    )
 
     # load the experiment config
     config = json.load(open('../experiment_configs/2D_sweep.json', 'r'))
-    jschema_sweep = jschema = json.load(open('../json_schemas/1D_&_2Dsweeps.json', 'r'))
-    jschema_dev = json.load(open('../json_schemas/SET.json', 'r'))
+    jschema_sweep = jschema = json.load(open('../json_schemas/experiment_schemas/1D_&_2Dsweeps.json', 'r'))
+    jschema_dev = json.load(open('../json_schemas/device_schemas/QDAC_SET.json', 'r'))
 
     # voltage safety check
     validate(instance=config, schema=jschema_sweep)
@@ -165,24 +167,19 @@ if __name__ == '__main__':
     # perform the sweep
     two_dimensional_sweep(
         SET1,
-        slow_ch,
-        fast_ch,
-        bias_v,
-        plunger_v,
-        acc_v,
-        vb1_v,
-        vb2_v,
-        slow_vstart,
-        slow_vend,
-        slow_steps,
-        fast_vstart,
-        fast_vend,
-        fast_steps,
-        fast_step_size,
-        fast_ch_name,
-        slow_ch_name,
-        slow_step_size
-        {
+        config['slow_ch'],
+        config['fast_ch'],
+        config['slow_vstart'],
+        config['slow_vend'],
+        config['slow_steps'],
+        config['fast_vstart'],
+        config['fast_vend'],
+        config['fast_steps'],
+        config['fast_step_size'],
+        config['fast_ch_name'],
+        config['slow_ch_name'],
+        config['slow_step_size'],
+        channel_generator_map={
             SET1.bias_ch_num: 1,
             SET1.plunger_ch_num: 2,
             SET1.acc_ch_num: 3,

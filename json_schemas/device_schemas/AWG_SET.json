@@ -1,0 +1,24 @@
+{
+    "$id": "json_schemas/AWG_SET.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title" : "SET pins",
+    "required" : ["plunger_1", "plunger_2", "barrier_middle"],
+    "type": "object",
+    "properties": {
+        "plunger_1": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 4
+        },
+        "plunger_2": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 4
+        },
+        "barrier_middle": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 4
+        }
+    }
+}

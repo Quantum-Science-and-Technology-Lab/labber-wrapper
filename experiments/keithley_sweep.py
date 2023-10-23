@@ -4,11 +4,11 @@ import time
 import json
 
 from labberwrapper.devices.NI_DAQ import NIDAQ
-from devices.Keithley_6430 import Keithley6430
-from labberwrapper.devices.QDevil_QDAC import QDAC
+from labberwrapper.devices.Keithley_6430 import Keithley6430
 from labberwrapper.devices.SET import SET
 from labberwrapper.logging.log import Log
 from jsonschema import validate
+
 
 def keithley_sweep(
     single_e_transistor,
@@ -84,23 +84,20 @@ if __name__ == '__main__':
 
     # load the experiment config
     config = json.load(open('../experiment_configs/keithley_sweep.json', 'r'))
-    jschema_sweep = json.load(open('../json_schemas/keithley_sweep.json', 'r'))
-    jschema_dev = json.load(open('../json_schemas/SET.json', 'r'))
+    jschema_sweep = json.load(open('../json_schemas/experiment_schemas/keithley_sweep.json', 'r'))
+    jschema_dev = json.load(open('../json_schemas/device_schemas/QDAC_SET.json', 'r'))
 
     # voltage safety check
     validate(instance=config, schema=jschema_sweep)
-    validate(instance = dev_config, schema = jschema_dev) 
+    validate(instance=dev_config, schema=jschema_dev)
 
     # perform the sweep
     keithley_sweep(
         SET1,
-        config['slow_vstart'],
-        config['slow_vend'],
-        config['slow_steps'],
-        config['step_length'],
-        {
-            SET1.bias_ch_num: 1
-        },
+        slow_vstart=config['slow_vstart'],
+        slow_vend=config['slow_vend'],
+        slow_steps=config['slow_steps'],
+        step_length=config['step_length'],
         v_min=-10,
         v_max=10,
         sample_rate_per_channel=1e3

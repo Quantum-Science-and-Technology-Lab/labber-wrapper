@@ -62,7 +62,9 @@ class QDAC(BaseDevice):
 
     def __init__(self, client, channel_generator_map=None):
         wd = PurePath(os.path.dirname(os.path.realpath(__file__))).parent
-        schema = ''.join(open(PurePath(wd).joinpath("json_schemas/QDevil_QDAC.json"), "r").readlines())
+        file = open(PurePath(wd).joinpath("json_schemas/instrument_schemas/QDevil_QDAC.json"), "r")
+        schema = ''.join(file.readlines())
+        file.close()
         super().__init__('QDevil QDAC', dict(interface='Serial', address='3'), client, schema)
 
         self.instr.startInstrument()

@@ -1,0 +1,10 @@
+{
+    "ramp_time": 5,
+    "samples": 5000,
+    "records": 1,
+    "averages": 1,
+    "buffer_size": 50,
+    "impedance": "50 Ohm",
+    "coupling": "DC",
+    "range": "250 mV"
+}

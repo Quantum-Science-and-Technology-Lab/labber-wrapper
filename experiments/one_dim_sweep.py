@@ -60,6 +60,7 @@ def one_dimensional_sweep(
 
     results = np.array([])
 
+    fast_ramp_mapping = {}
     for i in range(len(fast_ch)):
         fast_ramp_mapping[fast_ch[i]] = channel_generator_map[fast_ch[i]]
 
@@ -110,12 +111,12 @@ if __name__ == '__main__':
 
     # load the experiment config
     config = json.load(open('../experiment_configs/1D_sweep.json', 'r'))
-    jschema_sweep = json.load(open('../json_schemas/1D_&_2Dsweep.json', 'r'))
-    jschema_dev = json.load(open('../json_schemas/SET.json', 'r'))
+    jschema_sweep = json.load(open('../json_schemas/experiment_schemas/1D_&_2Dsweep.json', 'r'))
+    jschema_dev = json.load(open('../json_schemas/device_schemas/QDAC_SET.json', 'r'))
 
     # voltage safety check
-    validate(instance = config, schema = jschema_sweep)
-    validate(instance = dev_config, schema = jschema_dev)   
+    validate(instance=config, schema=jschema_sweep)
+    validate(instance=dev_config, schema=jschema_dev)
 
     # perform the sweep
     config = json.load(open('../experiment_configs/1D_sweep.json', 'r'))

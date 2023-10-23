@@ -1,0 +1,38 @@
+{
+    "$id": "json_schemas/mw_experiment.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title" : "Microwave Experiment",
+    "required" : [
+        "samples",
+        "records",
+        "averages",
+        "buffer_size",
+        "impedance",
+        "coupling",
+        "range"
+    ],
+    "type": "object",
+    "properties": {
+        "samples": {
+            "type": "number"
+        },
+        "records": {
+            "type": "number"
+        },
+        "averages": {
+            "type": "number"
+        },
+        "buffer_size": {
+            "type": "number"
+        },
+        "impedance": {
+            "type": "string"
+        },
+        "coupling": {
+            "type": "string"
+        },
+        "range": {
+            "type": "string"
+        }
+    }
+}

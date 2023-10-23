@@ -23,7 +23,9 @@ class Keithley6430(BaseDevice):
 
     def __init__(self, client):
         wd = PurePath(os.path.dirname(os.path.realpath(__file__))).parent
-        schema = ''.join(open(PurePath(wd).joinpath("json_schemas/Keithley_6430_Source_measurement_Unit.json"), "r").readlines())
+        file = open(PurePath(wd).joinpath("json_schemas/instrument_schemas/Keithley_6430_Source_measurement_Unit.json"), "r")
+        schema = ''.join(file.readlines())
+        file.close()
         super().__init__('Keithley 6430 Source Measurement Unit', dict(interface='GPIB', address='2'), client, schema)
 
     def set_voltage(self, voltage):

@@ -1,5 +1,5 @@
 {
-    "$id": "json_schemas/Keithley_6430_Source_measurement_Unit.json",
+    "$id": "json_schemas/instrument_schemas/Keithley_6430_Source_measurement_Unit.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title" : "source measurement unit values validation",
     "type": "object",

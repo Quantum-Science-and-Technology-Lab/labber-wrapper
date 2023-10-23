@@ -1,5 +1,5 @@
 {
-    "$id": "json_schemas/Agilent_PSG_Signal_Generator.json",
+    "$id": "json_schemas/instrument_schemas/Agilent_PSG_Signal_Generator.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title" : "agilent signal generator values validation",
     "type": "object",

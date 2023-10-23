@@ -1,55 +1,55 @@
 {
-    "$id": "json_schemas/NI_DAQ.json",
+    "$id": "json_schemas/instrument_schemas/NI_DAQ.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title" : "nidaq values validation",
     "type": "object",
     "properties": {
-        "Ch1 - Enabled": {
+        "Ch1:  Enabled": {
             "type": "boolean"
         },
-        "Ch2 - Enabled": {
+        "Ch2: Enabled": {
             "type": "boolean"
         },
-        "Ch3 - Enabled": {
+        "Ch3: Enabled": {
             "type": "boolean"
         },
-        "Ch4 - Enabled": {
+        "Ch4: Enabled": {
             "type": "boolean"
         },
-        "Ch1 - Enabled - Sweep rate": {
+        "Ch1: Enabled - Sweep rate": {
             "type": "number"
         },
-        "Ch2 - Enabled - Sweep rate": {
+        "Ch2: Enabled - Sweep rate": {
             "type": "number"
         },
         "Ch3 - Enabled - Sweep rate": {
             "type": "number"
         },
-        "Ch4 - Enabled - Sweep rate": {
+        "Ch4: Enabled - Sweep rate": {
             "type": "number"
         },
-        "Ch5 - Enabled": {
+        "Ch5: Enabled": {
             "type": "boolean"
         },
-        "Ch6 - Enabled": {
+        "Ch6: Enabled": {
             "type": "boolean"
         },
-        "Ch7 - Enabled": {
+        "Ch7: Enabled": {
             "type": "boolean"
         },
-        "Ch8 - Enabled": {
+        "Ch8: Enabled": {
             "type": "boolean"
         },
-        "Ch5 - Enabled - Sweep rate": {
+        "Ch5: Enabled - Sweep rate": {
             "type": "number"
         },
-        "Ch6 - Enabled - Sweep rate": {
+        "Ch6: Enabled - Sweep rate": {
             "type": "number"
         },
-        "Ch7 - Enabled - Sweep rate": {
+        "Ch7: Enabled - Sweep rate": {
             "type": "number"
         },
-        "Ch8 - Enabled - Sweep rate": {
+        "Ch8: Enabled - Sweep rate": {
             "type": "number"
         },
         "Ch1: Data": {

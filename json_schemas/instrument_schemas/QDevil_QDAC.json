@@ -1,5 +1,5 @@
 {
-    "$id": "json_schemas/QDevil_QDAC.json",
+    "$id": "json_schemas/instrument_schemas/QDevil_QDAC.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title" : "qdac values validation",
     "type": "object",
@@ -125,76 +125,76 @@
             "maximum": 2.5
         },
         "CH01 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH02 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH03 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH04 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH05 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH06 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH07 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH08 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH09 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH10 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH11 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH12 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH13 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH14 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH15 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH016 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH017 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH18 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH19 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH20 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH21 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH22 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH23 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH24 Voltage-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH01 Current": {
             "type": "number"
@@ -269,76 +269,76 @@
             "type": "number"
         },
         "CH01 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH02 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH03 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH04 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH05 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH06 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH07 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH08 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH09 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH10 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH11 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH12 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH13 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH14 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH15 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH016 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH017 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH18 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH19 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH20 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH21 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH22 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH23 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH24 Current-Range": {
-            "type": "number"
+            "type": "string"
         },
         "CH01 Mode": {
             "type": "string"

@@ -1,5 +1,5 @@
 {
-    "$id": "json_schemas/device.json",
+    "$id": "json_schemas/device_schemas/device.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title" : "device config values",
     "type": "object",

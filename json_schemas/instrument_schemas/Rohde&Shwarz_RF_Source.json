@@ -1,5 +1,5 @@
 {
-    "$id": "json_schemas/Rohde&Shwarz_RF_Source.json",
+    "$id": "json_schemas/instrument_schemas/Rohde&Shwarz_RF_Source.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title" : "rf source values validation",
     "type": "object",
